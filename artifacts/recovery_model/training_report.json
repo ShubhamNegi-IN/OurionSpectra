@@ -1,0 +1,50 @@
+{
+  "model": "SpectralRecoveryNet",
+  "objective": "masked heteroskedastic Gaussian NLL + weighted flux/gradient/curvature structure losses",
+  "inputs": [
+    "normalized_wavelength",
+    "noisy_flux",
+    "noise_sigma"
+  ],
+  "outputs": [
+    "recovered_flux",
+    "predictive_sigma"
+  ],
+  "device": "cpu",
+  "train_samples": 800,
+  "validation_samples": 150,
+  "epochs": 5,
+  "best_epoch": 5,
+  "best_validation_nll": -4.067558765411377,
+  "seed": 42,
+  "test_set_used_for_training": false,
+  "history": [
+    {
+      "epoch": 1,
+      "train_nll": -3.58246356010437,
+      "validation_nll": -3.9269356727600098
+    },
+    {
+      "epoch": 2,
+      "train_nll": -4.159190673828125,
+      "validation_nll": -3.9909634590148926
+    },
+    {
+      "epoch": 3,
+      "train_nll": -4.233664379119873,
+      "validation_nll": -4.036627769470215
+    },
+    {
+      "epoch": 4,
+      "train_nll": -4.24905912399292,
+      "validation_nll": -4.053495407104492
+    },
+    {
+      "epoch": 5,
+      "train_nll": -4.263059768676758,
+      "validation_nll": -4.067558765411377
+    }
+  ],
+  "scientific_caveat": "All synthetic pairs share one reference candidate; this remains a denoising/recovery proof of concept and is not evidence of generalization across independent planetary spectra.",
+  "stage": "5_structure_preserving_recovery"
+}

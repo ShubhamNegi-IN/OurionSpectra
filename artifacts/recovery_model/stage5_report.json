@@ -1,0 +1,111 @@
+{
+  "stage": "5_structure_preserving_recovery",
+  "status": "completed_prototype_not_integrated",
+  "files_created_or_updated": [
+    "ourionspectra/recovery_model.py",
+    "ourionspectra/train_recovery.py",
+    "tests/test_recovery_model.py",
+    "artifacts/recovery_model/model.pt",
+    "artifacts/recovery_model/training_report.json",
+    "artifacts/recovery_model/baseline_benchmark_stage5.json",
+    "artifacts/recovery_model/test_evaluation_stage5.json"
+  ],
+  "training": {
+    "train_samples": 800,
+    "validation_samples": 150,
+    "epochs": 5,
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "seed": 42,
+    "test_used": false
+  },
+  "test": {
+    "test_samples": 150,
+    "valid_points": 132450,
+    "rmse": 0.01861986974752236,
+    "mae": 0.010389621687097431,
+    "noisy_input_rmse": 0.019163424099435233,
+    "noisy_input_mae": 0.010612845271432025,
+    "gaussian_nll": -4.312353560129801,
+    "one_sigma_coverage": 0.8928350320875802,
+    "device": "cpu",
+    "test_set_used": true,
+    "by_held_out_regime": {
+      "low_held_out": {
+        "rmse": 0.003079103967176417,
+        "mae": 0.0021661803010455975,
+        "valid_points": 66225
+      },
+      "high_held_out": {
+        "rmse": 0.026151829918288544,
+        "mae": 0.01861306398938223,
+        "valid_points": 66225
+      }
+    }
+  },
+  "benchmark": {
+    "test_samples": 150,
+    "test_set_used_only_for_evaluation": true,
+    "methods": {
+      "raw_noisy": {
+        "rmse": 0.01916342358580479,
+        "mae": 0.010612845464299123,
+        "valid_points": 132450
+      },
+      "moving_average_5": {
+        "rmse": 0.01031930312612183,
+        "mae": 0.006820217782751755,
+        "valid_points": 132450
+      },
+      "moving_average_11": {
+        "rmse": 0.009172757550399948,
+        "mae": 0.006553070876858467,
+        "valid_points": 132450
+      },
+      "neural_recovery": {
+        "rmse": 0.018619869554318255,
+        "mae": 0.010389622026899208,
+        "valid_points": 132450
+      }
+    },
+    "by_noise_scale": {
+      "<0.45": {
+        "raw_noisy": {
+          "rmse": 0.0030221117293297594,
+          "mae": 0.002133227822681268,
+          "valid_points": 66225
+        },
+        "neural_recovery": {
+          "rmse": 0.0030791039549276796,
+          "mae": 0.0021661802862460414,
+          "valid_points": 66225
+        }
+      },
+      ">=2.0": {
+        "raw_noisy": {
+          "rmse": 0.026932145249745812,
+          "mae": 0.019092463105916977,
+          "valid_points": 66225
+        },
+        "neural_recovery": {
+          "rmse": 0.026151829826503624,
+          "mae": 0.018613063767552375,
+          "valid_points": 66225
+        }
+      }
+    }
+  },
+  "scientific_interpretation": [
+    "The redesigned neural model now improves slightly over the raw noisy input on the held-out test set.",
+    "It does not beat the moving-average baselines overall, so it is not promoted to the production recovery path.",
+    "The model shows a modest advantage in the held-out high-noise regime relative to the raw observation, but not over moving-average smoothing.",
+    "The synthetic corpus still derives all clean targets from one WASP-39 b reference candidate; independent planetary spectra are required before claiming broad generalization."
+  ],
+  "integration": {
+    "gui_modified": false,
+    "fastapi_modified": false,
+    "recovery_endpoint_modified": false,
+    "feature_detector_modified": false
+  },
+  "next_recommended_stage": "Improve training-data diversity using scientifically justified spectrum perturbation/augmentation or add independent reference spectra before production integration."
+}

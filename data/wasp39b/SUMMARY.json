@@ -1,0 +1,14 @@
+{
+  "output_directory": "/mnt/data/wasp39b_preprocessed",
+  "quality_report": "/mnt/data/wasp39b_preprocessed/wasp39b_quality_report.csv",
+  "reference_csv": "/mnt/data/wasp39b_preprocessed/wasp39b_reference.csv",
+  "metadata_json": "/mnt/data/wasp39b_preprocessed/wasp39b_metadata.json",
+  "plot": "/mnt/data/wasp39b_preprocessed/wasp39b_reference.png",
+  "reference_rows": 909,
+  "reference_valid_rows": 883,
+  "reference_nan_rows": 26,
+  "reference_wavelength_min": 0.63,
+  "reference_wavelength_max": 5.170000000000004,
+  "valid_fraction": 0.9713971397139713,
+  "median_reference_flux": 2.135309497784343
+}

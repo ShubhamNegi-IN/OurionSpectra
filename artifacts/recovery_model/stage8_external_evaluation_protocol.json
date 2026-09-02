@@ -1,0 +1,13 @@
+{
+  "stage": "8_external_reference_evaluation",
+  "purpose": "Provide a reproducible pathway for independent-spectrum validation without fabricating a second planet spectrum.",
+  "required_columns": [
+    "normalized_flux",
+    "normalized_uncertainty",
+    "wavelength_micron"
+  ],
+  "data_split_rule": "External reference files are evaluation-only and must never be copied into train/val datasets.",
+  "ground_truth_language": "The supplied spectrum remains a reference candidate, not ground truth.",
+  "atmospheric_feature_rule": "No molecular features are added, amplified, or claimed by this module.",
+  "current_status": "Awaiting an independently sourced reference candidate with provenance and uncertainty columns."
+}

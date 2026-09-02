@@ -1,0 +1,33 @@
+{
+  "target": "WASP-39 b",
+  "input_file": "73188c2f-0f12-46dd-a738-7c48bac68636.csv",
+  "input_rows_total": 176423,
+  "wasp39b_rows": 2154,
+  "wasp39b_source_files": 31,
+  "raw_wavelength_min_micron": 0.33,
+  "raw_wavelength_max_micron": 11.875,
+  "reference_type": "stitched high-resolution reference candidate",
+  "primary_reference_files": [
+    "WASP_39_b_3.11466_5078_1.tbl",
+    "WASP_39_b_3.11466_5077_1.tbl"
+  ],
+  "validation_files": [
+    "WASP_39_b_3.11466_5087_1.tbl",
+    "WASP_39_b_3.11466_5502_6.tbl",
+    "WASP_39_b_3.11466_4988_1.tbl",
+    "WASP_39_b_3.11466_4988_2.tbl",
+    "WASP_39_b_3.11466_4988_3.tbl",
+    "WASP_39_b_3.11466_4988_4.tbl",
+    "WASP_39_b_3.11466_5040_1.tbl"
+  ],
+  "grid_step_micron": 0.005,
+  "max_interpolation_gap_micron": 0.03,
+  "normalization": "divide by median valid reference flux",
+  "important_limitations": [
+    "The output is a reference-spectrum candidate, not ground truth.",
+    "The large gap in the 5077 observation is preserved rather than filled.",
+    "Lower-resolution and photometric observations are not merged into the high-resolution reference.",
+    "Flux uncertainties are derived from the absolute FLAMERR1/FLAMERR2 values.",
+    "No atmospheric molecules are inferred by this preprocessing step."
+  ]
+}

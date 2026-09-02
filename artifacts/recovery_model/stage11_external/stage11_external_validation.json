@@ -1,0 +1,104 @@
+{
+  "stage": "11_independent_target_external_validation",
+  "target": "HAT-P-1b",
+  "source_reference": "Wakeford et al. 2013, MNRAS 435, 3481; HST/WFC3 G141",
+  "source_url": "https://academic.oup.com/mnras/article/435/4/3481/1034590",
+  "source_type": "peer-reviewed published transmission spectrum",
+  "valid_points": 28,
+  "wavelength_range_micron": [
+    1.1269,
+    1.6453
+  ],
+  "noise_method": "independent Gaussian perturbations using propagated published Rp/R* uncertainty; no target-specific calibration",
+  "noise_scales": [
+    0.5,
+    1.0,
+    1.5,
+    2.0
+  ],
+  "realizations_per_scale": 100,
+  "training_used": false,
+  "validation_used": false,
+  "model_selection_used": false,
+  "ground_truth": false,
+  "feature_claims": false,
+  "results": {
+    "0.5": {
+      "raw": {
+        "rmse": 8.018204178649143e-05,
+        "mae": 6.370782975057582e-05
+      },
+      "moving_average_11": {
+        "rmse": 0.00016106022269313908,
+        "mae": 0.00012081591743705359
+      },
+      "neural": {
+        "rmse": 0.00019174227669062113,
+        "mae": 0.0001570675717586135
+      },
+      "neural_vs_ma11_rmse_improvement": -0.19050050648408212,
+      "realizations": 100
+    },
+    "1.0": {
+      "raw": {
+        "rmse": 0.00015807550110947751,
+        "mae": 0.00012641326344584895
+      },
+      "moving_average_11": {
+        "rmse": 0.00016595068983667655,
+        "mae": 0.00012875281384366682
+      },
+      "neural": {
+        "rmse": 0.00024314751352742193,
+        "mae": 0.00020455252758508246
+      },
+      "neural_vs_ma11_rmse_improvement": -0.46517928769515854,
+      "realizations": 100
+    },
+    "1.5": {
+      "raw": {
+        "rmse": 0.00024531825496190837,
+        "mae": 0.0001957202911375022
+      },
+      "moving_average_11": {
+        "rmse": 0.00017932910901434878,
+        "mae": 0.00014144185201318295
+      },
+      "neural": {
+        "rmse": 0.00032652032002833343,
+        "mae": 0.00027674389710492087
+      },
+      "neural_vs_ma11_rmse_improvement": -0.8207881688756249,
+      "realizations": 100
+    },
+    "2.0": {
+      "raw": {
+        "rmse": 0.00032104488362540623,
+        "mae": 0.0002573202204407291
+      },
+      "moving_average_11": {
+        "rmse": 0.00018807345840801042,
+        "mae": 0.00014809080649929983
+      },
+      "neural": {
+        "rmse": 0.0004155340265887936,
+        "mae": 0.0003569465578533431
+      },
+      "neural_vs_ma11_rmse_improvement": -1.2094240734773196,
+      "realizations": 100
+    }
+  },
+  "uncertainty_1sigma_coverage": {
+    "0.5": 1.0,
+    "1.0": 1.0,
+    "1.5": 1.0,
+    "2.0": 0.9924999999999998
+  },
+  "plot": "artifacts/recovery_model/stage11_external/stage11_external_validation.png",
+  "limitations": [
+    "This is an external-target synthetic-noise stress test, not recovery of the original raw HAT-P-1b time-series data.",
+    "The published spectrum has a much coarser grid and narrower wavelength range than the WASP-39b training grid.",
+    "Cross-target absolute transit-depth levels can differ because of system parameters and reduction choices; no offset fitting was applied.",
+    "The result does not establish generalization to all exoplanets or prove atmospheric-feature recovery."
+  ]
+}

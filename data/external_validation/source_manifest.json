@@ -1,0 +1,37 @@
+{
+  "stage13_training_sources": [
+    {
+      "target": "HAT-P-26b",
+      "citation": "Wakeford et al. 2017, Science 356, 628\u2013631, DOI 10.1126/science.aah4668",
+      "source": "Published Table 1; HST STIS/WFC3 and Spitzer",
+      "url": "https://doi.org/10.1126/science.aah4668",
+      "training_use": true
+    },
+    {
+      "target": "WASP-17b",
+      "citation": "Alderson et al. 2022, MNRAS 512, 4185\u20134209",
+      "source": "Published Tables 4\u20136; HST and Spitzer",
+      "url": "https://academic.oup.com/mnras/article/512/3/4185/6546167",
+      "training_use": true
+    },
+    {
+      "target": "WASP-39b",
+      "citation": "Existing OurionSpectra reference candidate",
+      "source": "data/wasp39b/wasp39b_reference.csv",
+      "training_use": true
+    }
+  ],
+  "external_holdout": [
+    {
+      "target": "HAT-P-1b",
+      "citation": "Wakeford et al. 2013, MNRAS 435, 3481\u20133493",
+      "source": "HST/WFC3 G141 published transmission spectrum",
+      "url": "https://academic.oup.com/mnras/article/435/4/3481/1034590",
+      "training_use": false,
+      "validation_use": false,
+      "model_selection_use": false
+    }
+  ],
+  "archive_reference": "Stellar Planet archive: published transmission spectra are compiled into a common four-column format by Dr Hannah Wakeford.",
+  "archive_url": "https://stellarplanet.org/science/exoplanet-transmission-spectra/"
+}

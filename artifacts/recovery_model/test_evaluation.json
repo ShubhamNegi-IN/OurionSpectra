@@ -1,0 +1,24 @@
+{
+  "test_samples": 150,
+  "valid_points": 132450,
+  "rmse": 0.0258332834498902,
+  "mae": 0.012555899701059067,
+  "noisy_input_rmse": 0.019163424099435233,
+  "noisy_input_mae": 0.010612845271432025,
+  "gaussian_nll": -3.9564523061116534,
+  "one_sigma_coverage": 0.6940354850887127,
+  "device": "cpu",
+  "test_set_used": true,
+  "by_held_out_regime": {
+    "low_held_out": {
+      "rmse": 0.020171048876876076,
+      "mae": 0.006161903281984081,
+      "valid_points": 66225
+    },
+    "high_held_out": {
+      "rmse": 0.0304605624490385,
+      "mae": 0.018949896703355038,
+      "valid_points": 66225
+    }
+  }
+}

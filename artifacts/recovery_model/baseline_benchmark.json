@@ -1,0 +1,52 @@
+{
+  "test_samples": 150,
+  "test_set_used_only_for_evaluation": true,
+  "methods": {
+    "raw_noisy": {
+      "rmse": 0.01916342358580479,
+      "mae": 0.010612845464299123,
+      "valid_points": 132450
+    },
+    "moving_average_5": {
+      "rmse": 0.01031930312612183,
+      "mae": 0.006820217782751755,
+      "valid_points": 132450
+    },
+    "moving_average_11": {
+      "rmse": 0.009172757550399948,
+      "mae": 0.006553070876858467,
+      "valid_points": 132450
+    },
+    "neural_recovery": {
+      "rmse": 0.025833283800110983,
+      "mae": 0.012555900073299806,
+      "valid_points": 132450
+    }
+  },
+  "by_noise_scale": {
+    "<0.45": {
+      "raw_noisy": {
+        "rmse": 0.0030221117293297594,
+        "mae": 0.002133227822681268,
+        "valid_points": 66225
+      },
+      "neural_recovery": {
+        "rmse": 0.020171049041980665,
+        "mae": 0.006161903279523055,
+        "valid_points": 66225
+      }
+    },
+    ">=2.0": {
+      "raw_noisy": {
+        "rmse": 0.026932145249745812,
+        "mae": 0.019092463105916977,
+        "valid_points": 66225
+      },
+      "neural_recovery": {
+        "rmse": 0.03046056277123198,
+        "mae": 0.018949896867076557,
+        "valid_points": 66225
+      }
+    }
+  }
+}

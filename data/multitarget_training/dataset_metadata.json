@@ -1,0 +1,56 @@
+{
+  "stage": 13,
+  "targets": [
+    "wasp39b",
+    "hatp26b",
+    "wasp17b"
+  ],
+  "samples_per_target": {
+    "train": 600,
+    "validation": 150,
+    "test": 150
+  },
+  "total_samples": 2700,
+  "split_sizes": {
+    "train": 1800,
+    "validation": 450,
+    "test": 450
+  },
+  "noise_method": "heteroskedastic Gaussian noise from each reference candidate uncertainty, plus zero-mean correlated AR(1)-like systematic field scaled locally by empirical uncertainty",
+  "noise_scale_ranges": {
+    "train": [
+      0.45,
+      2.4
+    ],
+    "validation": [
+      0.55,
+      2.6
+    ],
+    "test": [
+      0.35,
+      3.0
+    ]
+  },
+  "seed": 1313,
+  "external_holdout": "HAT-P-1b remains evaluation-only and is not included.",
+  "sources": {
+    "wasp39b": {
+      "path": "data/wasp39b/wasp39b_reference.csv",
+      "kind": "ourionspectra_reference_csv"
+    },
+    "hatp26b": {
+      "path": "data/external_validation/hatp26b_wakeford2017.csv",
+      "kind": "published_table_rp_over_rstar"
+    },
+    "wasp17b": {
+      "path": "data/external_validation/wasp17b_alderson2022.csv",
+      "kind": "published_table_transit_depth_percent"
+    }
+  },
+  "limitations": [
+    "Published transmission spectra are observational reference candidates, not analytical ground truth.",
+    "The corpus mixes instruments and reductions; this is intentional domain diversity but is not a homogeneous instrument model.",
+    "Synthetic noise is a statistical observation proxy, not a detector-level simulator.",
+    "No new atmospheric features are added."
+  ]
+}

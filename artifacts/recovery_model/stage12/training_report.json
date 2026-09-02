@@ -1,0 +1,58 @@
+{
+  "stage": 12,
+  "model": "GeneralizedSpectralRecoveryNet",
+  "training_samples": 800,
+  "validation_samples": 150,
+  "epochs": 8,
+  "best_validation_loss": -4.439071566263834,
+  "seed": 4212,
+  "test_used_for_training": false,
+  "external_targets_used_for_training": false,
+  "augmentation": "existing-channel stratified resolution/sampling dropout; no interpolation",
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": -4.050467231491769,
+      "validation_loss": -4.312738005320231
+    },
+    {
+      "epoch": 2,
+      "train_loss": -4.185088862784937,
+      "validation_loss": -4.306691614786784
+    },
+    {
+      "epoch": 3,
+      "train_loss": -4.2072000050399785,
+      "validation_loss": -4.375779698689779
+    },
+    {
+      "epoch": 4,
+      "train_loss": -4.219543334360666,
+      "validation_loss": -4.342693723042806
+    },
+    {
+      "epoch": 5,
+      "train_loss": -4.2353957909739055,
+      "validation_loss": -4.415546080271403
+    },
+    {
+      "epoch": 6,
+      "train_loss": -4.250846937402546,
+      "validation_loss": -4.368345483144124
+    },
+    {
+      "epoch": 7,
+      "train_loss": -4.261651979321172,
+      "validation_loss": -4.4253497886657716
+    },
+    {
+      "epoch": 8,
+      "train_loss": -4.2887128548856674,
+      "validation_loss": -4.439071566263834
+    }
+  ],
+  "limitations": [
+    "Training clean target diversity still originates from the WASP-39b reference candidate.",
+    "External target spectra remain evaluation-only."
+  ]
+}

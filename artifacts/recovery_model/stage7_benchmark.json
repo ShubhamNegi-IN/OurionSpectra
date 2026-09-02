@@ -1,0 +1,155 @@
+{
+  "stage": "7_high_noise_and_uncertainty",
+  "test_set_used_only_for_evaluation": true,
+  "test_samples": 150,
+  "held_out_test": {
+    "raw": {
+      "rmse": 0.019163423531278718,
+      "mae": 0.010612845401218162,
+      "valid_points": 132450
+    },
+    "ma5": {
+      "rmse": 0.010319303444838472,
+      "mae": 0.006820217948196268,
+      "valid_points": 132450
+    },
+    "ma11": {
+      "rmse": 0.009172757631885544,
+      "mae": 0.0065530711078251175,
+      "valid_points": 132450
+    },
+    "neural": {
+      "rmse": 0.008428826893132802,
+      "mae": 0.005677282747998519,
+      "valid_points": 132450
+    }
+  },
+  "test_uncertainty_coverage": {
+    "1sigma": 0.5992978482446205,
+    "2sigma": 0.8428614571536429
+  },
+  "domain_shift_benchmark": [
+    {
+      "name": "high_noise_short",
+      "noise_scale": 2.8,
+      "drift": 0.2,
+      "length": 0.04,
+      "raw": {
+        "rmse": 0.025514026027522382,
+        "mae": 0.01847666317599232,
+        "n": 883
+      },
+      "ma11": {
+        "rmse": 0.011279335544047336,
+        "mae": 0.008359627091989633,
+        "n": 883
+      },
+      "neural": {
+        "rmse": 0.010733879075673703,
+        "mae": 0.008097270147243303,
+        "n": 883
+      },
+      "coverage_1sigma": 0.7372593431483578,
+      "coverage_2sigma": 0.9580973952434881
+    },
+    {
+      "name": "high_noise_long",
+      "noise_scale": 2.8,
+      "drift": 0.2,
+      "length": 0.2,
+      "raw": {
+        "rmse": 0.023913928189698137,
+        "mae": 0.017087254658085332,
+        "n": 883
+      },
+      "ma11": {
+        "rmse": 0.010235581207925441,
+        "mae": 0.007423422714191246,
+        "n": 883
+      },
+      "neural": {
+        "rmse": 0.0100908473285791,
+        "mae": 0.00749612320029935,
+        "n": 883
+      },
+      "coverage_1sigma": 0.7746319365798414,
+      "coverage_2sigma": 0.9875424688561721
+    },
+    {
+      "name": "very_high_noise_short",
+      "noise_scale": 3.2,
+      "drift": 0.25,
+      "length": 0.05,
+      "raw": {
+        "rmse": 0.026672431163758833,
+        "mae": 0.01967682043791662,
+        "n": 883
+      },
+      "ma11": {
+        "rmse": 0.011787613572222688,
+        "mae": 0.00894356940480311,
+        "n": 883
+      },
+      "neural": {
+        "rmse": 0.011812876083503964,
+        "mae": 0.009237183715951903,
+        "n": 883
+      },
+      "coverage_1sigma": 0.7315968289920725,
+      "coverage_2sigma": 0.9648924122310306
+    },
+    {
+      "name": "very_high_noise_long",
+      "noise_scale": 3.2,
+      "drift": 0.25,
+      "length": 0.2,
+      "raw": {
+        "rmse": 0.02943732240732473,
+        "mae": 0.02062067766794574,
+        "n": 883
+      },
+      "ma11": {
+        "rmse": 0.012811552724661404,
+        "mae": 0.009487372821869448,
+        "n": 883
+      },
+      "neural": {
+        "rmse": 0.013347878824697339,
+        "mae": 0.01011611503612222,
+        "n": 883
+      },
+      "coverage_1sigma": 0.7214043035107588,
+      "coverage_2sigma": 0.9694224235560589
+    },
+    {
+      "name": "unseen_low_noise",
+      "noise_scale": 0.3,
+      "drift": 0.25,
+      "length": 0.12,
+      "raw": {
+        "rmse": 0.002674359404669975,
+        "mae": 0.0018873605363798336,
+        "n": 883
+      },
+      "ma11": {
+        "rmse": 0.006263320449602874,
+        "mae": 0.004757784017273061,
+        "n": 883
+      },
+      "neural": {
+        "rmse": 0.004176670646514238,
+        "mae": 0.003149472720701242,
+        "n": 883
+      },
+      "coverage_1sigma": 0.362400906002265,
+      "coverage_2sigma": 0.6319365798414496
+    }
+  ],
+  "scientific_note": "The hybrid network is explicitly conditioned on a transparent moving-average baseline. This is a fair hybrid benchmark, not evidence of cross-planet generalization. The clean target remains the original WASP-39b reference candidate and is never modified.",
+  "integration_ready": false,
+  "test_uncertainty_coverage_calibrated": {
+    "1sigma": 0.5591015477538693,
+    "2sigma": 0.8143148357870895,
+    "validation_calibration_factor": 0.904682993888855
+  }
+}

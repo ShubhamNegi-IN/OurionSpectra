@@ -1,0 +1,86 @@
+{
+  "target": "WASP-39 b",
+  "dataset_type": "Synthetic noisy-spectrum dataset for supervised recovery",
+  "source_reference_file": "data/wasp39b/wasp39b_reference.csv",
+  "number_of_samples": {
+    "total": 1100,
+    "train": 800,
+    "validation": 150,
+    "test": 150
+  },
+  "number_of_wavelength_points": 909,
+  "valid_wavelength_points": 883,
+  "gap_wavelength_points": 26,
+  "wavelength_range_micron": [
+    0.63,
+    5.170000000000004
+  ],
+  "noise_generation": {
+    "method": "Heteroskedastic Gaussian measurement noise scaled from normalized_uncertainty plus optional smooth correlated systematic component.",
+    "base_uncertainty_median": 0.0071145539825120665,
+    "base_uncertainty_mean": 0.007723909552332391,
+    "correlated_component": "Gaussian-smoothed random field scaled locally by empirical uncertainty; zero mean per realization.",
+    "correlation_length_micron": 0.08,
+    "systematic_fraction_range": [
+      0.0,
+      0.35
+    ]
+  },
+  "noise_snr_ranges": {
+    "overall": {
+      "noise_scale_min": 0.25548505988867554,
+      "noise_scale_max": 3.3826206467633053,
+      "noise_scale_median": 1.119235920934774,
+      "estimated_snr_min": 37.638269156761986,
+      "estimated_snr_max": 490.0697784871951,
+      "estimated_snr_median": 115.07846747722837
+    },
+    "train": {
+      "noise_scale_min": 0.4501657539458137,
+      "noise_scale_max": 2.5966700482643503,
+      "noise_scale_median": 1.0554088688773304,
+      "estimated_snr_min": 48.79151887294561,
+      "estimated_snr_max": 288.4211840380887,
+      "estimated_snr_median": 122.99344861526988
+    },
+    "validation": {
+      "noise_scale_min": 0.5637504044431899,
+      "noise_scale_max": 2.4396029904595253,
+      "noise_scale_median": 1.3983727894867872,
+      "estimated_snr_min": 53.22068396956434,
+      "estimated_snr_max": 227.76190357074003,
+      "estimated_snr_median": 93.55756184587017
+    },
+    "test": {
+      "noise_scale_min": 0.25548505988867554,
+      "noise_scale_max": 3.3826206467633053,
+      "noise_scale_median": 1.5264499143098105,
+      "estimated_snr_min": 37.638269156761986,
+      "estimated_snr_max": 490.0697784871951,
+      "estimated_snr_median": 170.11662774850998
+    }
+  },
+  "train_validation_test_split": {
+    "train": 800,
+    "validation": 150,
+    "test": 150
+  },
+  "random_seed": 42,
+  "leakage_prevention": {
+    "independent_prng_streams": true,
+    "test_noise_regimes_outside_train_range": true,
+    "near_duplicate_check": "Residual correlation is checked by unit tests on independently generated samples."
+  },
+  "preservation": {
+    "reference_flux_unchanged": true,
+    "missing_channels_interpolated": false,
+    "nan_gap_channels_remain_null": true
+  },
+  "scientific_limitations": [
+    "The reference spectrum is a stitched observational reference candidate, not analytical ground truth.",
+    "The generator models measurement noise statistically and cannot reproduce every JWST detector or reduction systematic.",
+    "The correlated component is a controlled stochastic proxy, not a calibrated instrument noise covariance matrix.",
+    "Synthetic training data are conditional on the supplied reference candidate and do not provide independent atmospheric truth.",
+    "No atmospheric molecular features are added or claimed by the generator."
+  ]
+}

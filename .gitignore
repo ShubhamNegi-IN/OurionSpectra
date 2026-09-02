@@ -1,0 +1,63 @@
+﻿# ================================
+# OURIONSPECTRA - Git Ignore
+# ================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+env/
+venv/
+.venv/
+ENV/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing / Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build files
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Archives
+*.zip
+*.log
+
+# Local/session data
+data/sessions/*.json
+!data/sessions/.gitkeep
+
+# ================================
+# Temporary / generated model files
+# ================================
+
+# Old/experimental model formats
+*.npy
+
+# Keep important final models explicitly
+!models/*.pth
+!models/*.npz
+
+# Ignore intermediate recovery checkpoints
+artifacts/recovery_model/stage5/
+artifacts/recovery_model/stage6/
+artifacts/recovery_model/stage7/
+artifacts/recovery_model/stage9_model/
+artifacts/recovery_model/stage14/
+artifacts/recovery_model/stage14_fast/
+
+# Ignore temporary stdout logs
+*_stdout.txt

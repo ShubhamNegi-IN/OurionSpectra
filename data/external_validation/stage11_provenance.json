@@ -1,0 +1,20 @@
+{
+  "stage": "11_independent_target_external_validation",
+  "target": "HAT-P-1b",
+  "source": "Wakeford et al. 2013, MNRAS 435, 3481",
+  "source_url": "https://academic.oup.com/mnras/article/435/4/3481/1034590",
+  "instrument": "HST/WFC3 G141",
+  "source_table": "Table 2, differential photometry with common-mode removal",
+  "source_values": "Rp/R* and 1-sigma uncertainty",
+  "transformations": [
+    "transit depth D=(Rp/R*)^2",
+    "uncertainty propagation sigma_D=2*(Rp/R*)*sigma_Rp/R*",
+    "flux-like representation F/F*=1-D"
+  ],
+  "training_used": false,
+  "validation_used": false,
+  "model_selection_used": false,
+  "ground_truth": false,
+  "atmospheric_feature_claims": false,
+  "purpose": "external-target synthetic-noise stress test only"
+}

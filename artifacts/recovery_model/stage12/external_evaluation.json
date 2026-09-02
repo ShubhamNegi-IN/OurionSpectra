@@ -1,0 +1,48 @@
+{
+  "stage": 12,
+  "target": "HAT-P-1b",
+  "external_evaluation_only": true,
+  "results": [
+    {
+      "scale": 0.5,
+      "raw_rmse": 8.145490216676098e-05,
+      "baseline_rmse": 0.00017849336068683503,
+      "neural_rmse": 0.00020627556223633918,
+      "raw_mae": 6.606740574467339e-05,
+      "baseline_mae": 0.0001354438084957273,
+      "neural_mae": 0.00016392549203068376
+    },
+    {
+      "scale": 1.0,
+      "raw_rmse": 0.00016153433171303786,
+      "baseline_rmse": 0.0001844858116376006,
+      "neural_rmse": 0.00023612099152981657,
+      "raw_mae": 0.00012958258010621653,
+      "baseline_mae": 0.0001432528182523148,
+      "neural_mae": 0.0001938387572426633
+    },
+    {
+      "scale": 1.5,
+      "raw_rmse": 0.0002371490381128285,
+      "baseline_rmse": 0.0001966490853253645,
+      "neural_rmse": 0.0002814045631803547,
+      "raw_mae": 0.00018891902398538398,
+      "baseline_mae": 0.00015446127654571127,
+      "neural_mae": 0.0002339148644344136
+    },
+    {
+      "scale": 2.0,
+      "raw_rmse": 0.0003192909711098393,
+      "baseline_rmse": 0.00020835070557639022,
+      "neural_rmse": 0.0003283983461470686,
+      "raw_mae": 0.00025401756403241934,
+      "baseline_mae": 0.00016610217972557777,
+      "neural_mae": 0.00027535637971359134
+    }
+  ],
+  "limitations": [
+    "No external target used for training or model selection.",
+    "The independent spectrum has a much coarser grid and different uncertainty scale than WASP-39b.",
+    "This is a synthetic-noise stress test of a published reference candidate, not raw time-series recovery."
+  ]
+}

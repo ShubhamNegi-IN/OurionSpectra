@@ -1,0 +1,68 @@
+{
+  "stage": "9_final_scientific_validation",
+  "model_checkpoint": "artifacts/recovery_model/stage9_model/model.pt",
+  "test_set_used_only_for_final_evaluation": true,
+  "test_samples": 150,
+  "aggregate_metrics": {
+    "raw": {
+      "rmse": 0.01916342358580479,
+      "mae": 0.010612845464299123,
+      "valid_points": 132450
+    },
+    "ma11": {
+      "rmse": 0.009172757532553893,
+      "mae": 0.006553070964291692,
+      "valid_points": 132450
+    },
+    "neural": {
+      "rmse": 0.007817989217691616,
+      "mae": 0.00510458137995253,
+      "valid_points": 132450
+    }
+  },
+  "relative_rmse_improvement_vs_raw": 0.5920358811312425,
+  "relative_rmse_improvement_vs_ma11": 0.14769477009004528,
+  "sample_level_ma11_minus_neural_rmse_bootstrap": {
+    "estimate": 0.001869725277647376,
+    "ci95": [
+      0.0017012449707447862,
+      0.002029621217981912
+    ]
+  },
+  "uncertainty_coverage": {
+    "1sigma": 0.6580596451491127,
+    "2sigma": 0.900505851264628
+  },
+  "structure_metrics": {
+    "raw": {
+      "gradient_rmse": 0.020611351914703847,
+      "curvature_rmse": 0.03561431891284883
+    },
+    "ma11": {
+      "gradient_rmse": 0.006886002719402313,
+      "curvature_rmse": 0.00954811966046691
+    },
+    "neural": {
+      "gradient_rmse": 0.005054049772831301,
+      "curvature_rmse": 0.007488884860649705
+    }
+  },
+  "readiness_gate": {
+    "passed": true,
+    "criteria": {
+      "beats_ma11": true,
+      "positive_95pct_sample_advantage": true,
+      "min_1sigma_coverage": 0.55,
+      "min_2sigma_coverage": 0.75
+    }
+  },
+  "scientific_status": "pre-integration candidate",
+  "limitations": [
+    "All synthetic clean targets derive from one WASP-39b reference candidate.",
+    "This is not evidence of cross-planet generalization; an independent reference spectrum is still required.",
+    "Uncertainty coverage is evaluated on synthetic held-out data and is not a substitute for observational calibration.",
+    "No atmospheric feature or molecular detection is inferred by this benchmark."
+  ],
+  "integration_policy": "Do not modify GUI or FastAPI recovery route until the external validation protocol is exercised with an independently sourced compatible reference spectrum.",
+  "seed": 9031
+}

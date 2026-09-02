@@ -1,0 +1,113 @@
+{
+  "stage": "6_domain_robustness",
+  "seed": 2026,
+  "target_is_original_reference_candidate": true,
+  "regimes": [
+    {
+      "name": "nominal_short",
+      "noise_scale": 1.0,
+      "drift": 0.15,
+      "length": 0.04,
+      "neural": {
+        "rmse": 0.005432725213794719,
+        "mae": 0.00404096437492048,
+        "n": 883
+      },
+      "moving_average_11": {
+        "rmse": 0.006851539330915785,
+        "mae": 0.005206291845199261,
+        "n": 883
+      },
+      "raw": {
+        "rmse": 0.008813263081840543,
+        "mae": 0.006300816415225412,
+        "n": 883
+      }
+    },
+    {
+      "name": "nominal_long",
+      "noise_scale": 1.0,
+      "drift": 0.15,
+      "length": 0.2,
+      "neural": {
+        "rmse": 0.005293525507961676,
+        "mae": 0.003950262091976746,
+        "n": 883
+      },
+      "moving_average_11": {
+        "rmse": 0.0069767973483665065,
+        "mae": 0.0052953572269287975,
+        "n": 883
+      },
+      "raw": {
+        "rmse": 0.00870377253961743,
+        "mae": 0.006283529309856912,
+        "n": 883
+      }
+    },
+    {
+      "name": "high_noise_short",
+      "noise_scale": 2.8,
+      "drift": 0.2,
+      "length": 0.04,
+      "neural": {
+        "rmse": 0.015702853138132574,
+        "mae": 0.01116455181810916,
+        "n": 883
+      },
+      "moving_average_11": {
+        "rmse": 0.010905860569587608,
+        "mae": 0.008211066329431308,
+        "n": 883
+      },
+      "raw": {
+        "rmse": 0.025495232203636847,
+        "mae": 0.018035845454705438,
+        "n": 883
+      }
+    },
+    {
+      "name": "high_noise_long",
+      "noise_scale": 2.8,
+      "drift": 0.2,
+      "length": 0.2,
+      "neural": {
+        "rmse": 0.015529429848235955,
+        "mae": 0.011036662986582154,
+        "n": 883
+      },
+      "moving_average_11": {
+        "rmse": 0.010880108553013454,
+        "mae": 0.008106747706302223,
+        "n": 883
+      },
+      "raw": {
+        "rmse": 0.025631571295602274,
+        "mae": 0.018381079520019095,
+        "n": 883
+      }
+    },
+    {
+      "name": "low_noise_unseen",
+      "noise_scale": 0.3,
+      "drift": 0.25,
+      "length": 0.12,
+      "neural": {
+        "rmse": 0.0025001299610704496,
+        "mae": 0.0018375625596855055,
+        "n": 883
+      },
+      "moving_average_11": {
+        "rmse": 0.006323993520596935,
+        "mae": 0.004749784629529793,
+        "n": 883
+      },
+      "raw": {
+        "rmse": 0.002700390043568764,
+        "mae": 0.0019536563960367336,
+        "n": 883
+      }
+    }
+  ],
+  "scientific_note": "This benchmark tests observation-level domain shift only. It does not create alternative atmospheric spectra or claim planetary generalization."
+}

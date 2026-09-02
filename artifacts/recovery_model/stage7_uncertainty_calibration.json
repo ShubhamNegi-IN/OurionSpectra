@@ -1,0 +1,8 @@
+{
+  "stage": "7_uncertainty_calibration",
+  "method": "single validation-derived multiplicative scale",
+  "target_coverage": "68% within calibrated 1-sigma",
+  "calibration_factor": 0.904682993888855,
+  "validation_samples": 150,
+  "test_labels_used": false
+}
